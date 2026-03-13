@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink-50 text-ink-900 font-body antialiased;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(212,168,67,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 100%, rgba(116,107,79,0.06) 0%, transparent 60%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .photo-card {
+    @apply relative overflow-hidden rounded-lg bg-ink-100 shadow-card
+           transition-all duration-300 cursor-pointer;
+  }
+
+  .photo-card:hover {
+    @apply shadow-card-hover -translate-y-1;
+  }
+
+  .fav-btn {
+    @apply absolute top-2.5 right-2.5 z-10
+           w-8 h-8 flex items-center justify-center
+           rounded-full bg-white/80 backdrop-blur-sm
+           transition-all duration-200 shadow-sm;
+  }
+
+  .fav-btn:hover {
+    @apply bg-white scale-110;
+  }
+
+  .search-input {
+    @apply w-full bg-white/70 backdrop-blur-sm border border-ink-200
+           rounded-full px-5 py-2.5 text-sm text-ink-800
+           placeholder-ink-400 outline-none
+           transition-all duration-200;
+  }
+
+  .search-input:focus {
+    @apply bg-white border-gold-400 ring-2 ring-gold-300/30;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full
+           text-xs font-mono font-medium tracking-wide
+           bg-ink-100 text-ink-600 border border-ink-200;
+  }
+
+  .skeleton {
+    @apply bg-ink-200 rounded-lg animate-pulse;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.4s ease both;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-ink-300 rounded-full; }
