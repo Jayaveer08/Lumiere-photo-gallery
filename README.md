@@ -1,10 +1,10 @@
 # Lumière — Photo Gallery
 
-A polished React + Vite photo gallery app with Tailwind CSS.
+A polished React photo gallery app with Tailwind CSS.
 
 ## Features
 
-- 📸 Fetches 30 photos from the [Picsum API](https://picsum.photos/v2/list)
+- 📸 Fetches 30 photos from the [ Picsum ](https://picsum.photos/v2/list)
 - 🔍 Real-time author search with `useCallback`-memoised handler
 - 💛 Favourites system powered by `useReducer` + `localStorage` persistence
 - ⚡ `useMemo` for filtered photo list (no wasted iterations on re-renders)
