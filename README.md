@@ -1,6 +1,6 @@
 # Lumière — Photo Gallery
 
-A polished React photo gallery app with Tailwind CSS.
+A polished React photo gallery app.
 
 ## Features
 
