@@ -52,17 +52,3 @@ photo-gallery/
         ├── PhotoGrid.jsx                # Responsive grid + states
         └── PhotoCard.jsx                # Card + lightbox + heart button
 ```
-
-## Key Design Decisions
-
-### `useFetchPhotos` hook
-Encapsulates fetch lifecycle (`loading`, `error`, `data`) and uses a cancellation flag to prevent state updates on unmounted components.
-
-### `useReducer` for favourites
-The reducer handles `TOGGLE` (add or remove by ID) and `CLEAR` actions. State is lazily initialised from `localStorage` and synced back via a `useEffect`.
-
-### `useCallback` for search handler
-`handleSearch` is wrapped in `useCallback` so its reference stays stable across renders — important if it were passed as a prop to memoised children.
-
-### `useMemo` for filtered photos
-`visiblePhotos` only recomputes when `photos`, `favourites`, `showFavs`, or `query` change, keeping renders cheap.
